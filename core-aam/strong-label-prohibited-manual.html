@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>aria-autocomplete=list</title>
+    <title>strong label prohibited</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
     <link rel="stylesheet" href="/wai-aria/scripts/manual.css">
     <script src="/resources/testharness.js"></script>
@@ -19,29 +19,33 @@
             "ATK" : [
                [
                   "property",
-                  "objectAttributes",
-                  "contains",
-                  "autocomplete:list"
-               ],
+                  "name",
+                  "is",
+                  ""
+               ]
+            ],
+            "AXAPI" : [
                [
                   "property",
-                  "states",
-                  "contains",
-                  "STATE_SUPPORTS_AUTOCOMPLETION"
+                  "AXDescription",
+                  "is",
+                  ""
                ]
             ],
             "IAccessible2" : [
                [
                   "property",
-                  "objectAttributes",
-                  "contains",
-                  "autocomplete:list"
-               ],
+                  "accName",
+                  "is",
+                  ""
+               ]
+            ],
+            "UIA" : [
                [
                   "property",
-                  "states",
-                  "contains",
-                  "IA2_STATE_SUPPORTS_AUTOCOMPLETION"
+                  "Name",
+                  "is",
+                  ""
                ]
             ]
          },
@@ -49,15 +53,15 @@
          "type" : "test"
       }
    ],
-   "title" : "aria-autocomplete=list"
+   "title" : "strong label prohibited"
 }
 
     ) ;
     </script>
   </head>
   <body>
-  <p>This test examines the ARIA properties for aria-autocomplete=list.</p>
-  <input role='combobox' id='test' aria-autocomplete='list'>
+  <p>This test examines the ARIA properties for strong with a label.</p>
+  <p role="strong" id="test" aria-label="foo">content</p>
   <div id="manualMode"></div>
   <div id="log"></div>
   <div id="ATTAmessages"></div>
